@@ -1,0 +1,22 @@
+When in doubt, use the ansible command to verify a machine's presence in the inventory:
+[user@controlnode ~]$ ansible washington1.example.com --list-hosts
+hosts (1):
+washington1.example.com
+[user@controlnode ~]$ ansible washington01.example.com --list-hosts
+[WARNING]: provided hosts list is empty, only localhost is available
+hosts (0):
+---------------
+You can run the following command to list all hosts in a group:
+[user@controlnode ~]$ ansible canada --list-hosts
+hosts (2):
+ontario01.example.com
+ontario02.example.com
+
+//
+IMPORTANT
+If the inventory contains a host and a host group with the same name, the ansible
+command prints a warning and targets the host. The host group is ignored.
+There are various ways to deal with this situation, the easiest being
+to ensure that
+host groups do not use the same names as hosts in the inventory.
+//
