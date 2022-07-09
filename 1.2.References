@@ -1,0 +1,10 @@
+REFERENCES
+ansible(1) man page
+Top Support Policies for Red Hat Ansible Automation
+https://access.redhat.com/ansible-top-support-policies
+Installation Guide — Ansible Documentation
+http://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html
+Windows Guides — Ansible Documentation
+https://docs.ansible.com/ansible/latest/user_guide/windows.html
+Ansible for Networking Automation — Ansible Documentation
+https://docs.ansible.com/ansible/latest/network/index.html
