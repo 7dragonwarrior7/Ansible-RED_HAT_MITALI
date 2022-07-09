@@ -1,0 +1,26 @@
+two types of inventory
+default inventory---------> /etc/ansible/hosts
+inventory in users------------> /home/ozone/ansible/hosts
+
+
+ansible all --list-hosts
+[damu@localhost ansible]$ ansible all --list-hosts
+  hosts (1):
+    192.168.15.129
+[damu@localhost ansible]$ 
+172.16.15.127
+
+go to vim /etc/hosts -----------> define ips
+eg:
+192.168.15.130 grey
+192.168.15.129 blue
+and then go to vim /etc/ansible/hosts
+eg:
+#vms
+grey
+
+-------->make sure you done ssh-keygen step
+and ssh-copy-id
+
+
+
