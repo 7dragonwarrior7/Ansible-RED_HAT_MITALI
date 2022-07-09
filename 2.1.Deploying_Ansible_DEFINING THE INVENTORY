@@ -49,3 +49,37 @@ Defining Nested Groups
 /*Ansible host inventories can include groups of host groups. This is accomplished by creating a
 host group name with the :children suffix. The following example creates a new group called
 north-america, which includes all hosts from the usa and canada groups.*/
+[usa]
+washington1.example.com
+washington2.example.com
+[canada]
+ontario01.example.com
+ontario02.example.com
+[north-america:children]
+canada
+usa
+---------------------------
+Simplifying Host Specifications with Ranges
+/*
+You can specify ranges in the host names or IP addresses to simplify Ansible host inventories. You
+can specify either numeric or alphabetic ranges. Ranges have the following syntax:
+*/
+[START:END]
+eg:
+#192.168.[4:7].[0:255] matches all IPv4 addresses in the 192.168.4.0/22 network (192.168.4.0 through 192.168.7.255).
+#server[01:20].example.com matches all hosts named server01.example.com through server20.example.com.
+#[a:c].dns.example.com matches hosts named a.dns.example.com, b.dns.example.com, and c.dns.example.com.
+#2001:db8::[a:f] matches all IPv6 addresses from 2001:db8::a through 2001:db8::f.
+/*
+If leading zeros are included in numeric ranges, they are used in the pattern. The second example
+above does not match server1.example.com but does match server07.example.com.
+To illustrate this, the following example uses ranges to simplify the [usa] and [canada] group
+definitions from the earlier example:
+*/
+[usa]
+washington[1:2].example.com
+[canada]
+ontario[01:02].example.com
+
+
+
